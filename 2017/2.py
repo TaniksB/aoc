@@ -1,6 +1,6 @@
 from functions import spreadsheet_to_list
 
-with open("/home/yolo/workspace/private/aoc/2017/input_2.txt") as fp:
+with open("/home/adrian_nagel/workspace/private/aoc/2017/input_2.txt") as fp:
     input = fp.read()
     
 inplist = spreadsheet_to_list(input)
