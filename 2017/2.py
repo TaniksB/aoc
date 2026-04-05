@@ -19,4 +19,14 @@ for num in inplist:
     checksum = highest - lowest
     checksum_total += checksum
 
+div_sum = 0
+for line in inplist:
+    for num_a in line:
+        for num_b in line:
+            if int(num_a) % int(num_b) == 0:
+                if num_a != num_b:
+                    print (num_a, num_b)
+                    div_sum += int(num_a) / int(num_b)
+
 print (f'Sum of checksums is: {checksum_total}')
+print (f'Sum of even divisions is: {int(div_sum)}')
