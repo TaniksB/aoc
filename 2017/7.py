@@ -22,20 +22,19 @@ for line in puzzle_lines:
 
 start = programs[0]
 lowest_seen = start[0]
-previous = None
+layers = [None]
+layers.append(lowest_seen)
 
-def scan(lowest):
+def scan(layers, programs):
     for program in programs:
         for ind in program[1:]:
-            if ind == lowest:
-                lowest_seen = program[0]
-    print (lowest_seen)
-    return lowest_seen
+            if layers[-1] == ind:
+                layers.append(program[0])
+                return layers
+    print (f'Base program is {layers[-1]}!')
+    sys.exit()
 
 while 0 == 0:
-    if previous != lowest_seen:
-        previous = lowest_seen
-        lowest_seen = scan(lowest_seen)
-    else:
-        print (f'Base program is {lowest_seen} !')
-        sys.exit()
+    scan(layers, programs)
+
+
