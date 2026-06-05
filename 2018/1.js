@@ -13,3 +13,16 @@ for (let i = 0; i < splitInput.length; i++) {
 }
 
 console.log(`Final frequency is: ${frequency}`)
+
+frequency = 0
+history = []
+const whyy = splitInput.length - 1
+
+for (let i = 0;; i++) {
+    frequency += Number(splitInput[i]);;
+    if (history.includes(frequency)) {break};
+    history.push(frequency);
+    if (i == whyy) {i = -1}
+}
+
+console.log(`Frequency ${frequency} has appeared twice!`)
