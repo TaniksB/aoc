@@ -20,5 +20,23 @@ for (let id of splitInput) {
     }
 }
 
-
 console.log(`Final checksum is: ${checksum2 * checksum3}`)
+
+
+commonLetters = findFabric()
+console.log(`Common letters are: ${commonLetters}`)
+
+function findFabric () {
+    for (let first of splitInput) {
+        for (let second of splitInput) {
+            if (first == second) {continue}
+            let diff = 0
+            let common = ""
+            for (let i = 0; i < first.length; i++) {
+                if (first[i] != second[i]) {diff++}
+                else {common += first[i]}
+            }
+            if (diff == 1) {return common}
+        }
+    }
+}
