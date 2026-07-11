@@ -12,8 +12,16 @@ public class test {
         
         for (String module : modules) {
             int moduleInt = Integer.parseInt(module);
-            int fuelReq = Math.floorDiv(moduleInt, 3) - 2;
-            fuelTotal += fuelReq;
+            int fuelReq = 1;
+            while (fuelReq > 0) {
+                fuelReq = Math.floorDiv(moduleInt, 3) - 2;
+                if (fuelReq > 0) {fuelTotal += fuelReq;}
+                // String debug = "logged ";
+                // debug += fuelReq;
+                // System.out.println(debug);
+                moduleInt = fuelReq;
+            }
+            
         }
 
         System.out.println("Total fuel requirement is:");
