@@ -2,7 +2,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
 
-public class test {
+public class day1 {
     public static void main(String[] args) throws IOException {
         Path inputPath = Path.of("input_1.txt");
         String input = Files.readString(inputPath);
